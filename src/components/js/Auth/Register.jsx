@@ -7,18 +7,31 @@ export default function Register() {
   const [email , setEmail] = useState("");
   const [password , setPassword] = useState("");
   const [c_password , setC_Password] = useState("");
+  const navigate = useNavigate();
 
-  async function Register(){
+
+
+  async function SignUp(){
     let item = { name , email, password , c_password}; 
+    console.warn(item);
     let result =  await fetch("http://localhost:8000/api/register", {
-      method: 'POST' ,  
+      method: 'POST' , 
+      body: JSON.stringify(item), 
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
       }
     }) ; 
-    result =  await result.json(); 
-    // console.warn("result" , result);
+   
+    if(result.error){
+      alert(result.error);
+    }else{
+      result =  await result.json(); 
+      console.warn("result", result);
+      localStorage.setItem("user-info" , JSON.stringify(result));
+      navigate('/');
+    }
+   
   }
 
   return (
@@ -53,7 +66,7 @@ export default function Register() {
                       </div>
                       <p className="small mb-5 pb-lg-2"><a className="text-white-50" href="#!">Forgot password?</a></p>
                       {/* <Link to ={`#`}><button className="btn btn-outline-light btn-lg px-3" type="submit">Sign Up</button></Link> */}
-                      <button className='btn btn-outline-light btn-lg px-3 ' type='button' onClick={Register} >Register</button>
+                      <button className='btn btn-outline-light btn-lg px-3 ' type='button' onClick={SignUp} >Register</button>
 
                     </div>
 

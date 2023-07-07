@@ -27,6 +27,13 @@
 
 }
 
+.text_description{
+    line-clamp: 4;
+    overflow: hidden;
+
+}
+
+
 
 
 

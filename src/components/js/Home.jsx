@@ -40,7 +40,7 @@ export default function Home() {
           </div>
       </section>
 
-      <section className="bg-primary text-light p-3">
+      {/* <section className="bg-primary text-light p-3">
         <div className="container">
           <div className="d-md-flex justify-content-between align-items-center">
             <h4 className="mb-3 mb-md-0">Sign Up For Free</h4>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
 
       {/* section Box */}
@@ -131,6 +131,16 @@ export default function Home() {
   
 
       {/* section carousel Top Electronic*/}
+
+      <section className='p-3'>
+
+        <div className="container">
+          <div className="text-center">
+            <h2>Trending Electronic</h2>
+          </div>
+          <h2></h2>
+        </div>
+      </section>
 
 
 

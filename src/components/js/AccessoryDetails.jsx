@@ -23,6 +23,7 @@ export default function AccessoryDetails() {
     <>
 
         <div className="container">
+            <h1>Accessories</h1>
         {
             accessory.map((show) => 
                (
@@ -65,8 +66,6 @@ export default function AccessoryDetails() {
                             <div className=" m-lg-4">
                                 <p>{show.description}</p>
                             </div>
-
-        
                             <div className="fw-bold py-3">
                                 <h4><i className="bi bi-bag text-primary">Where You Can Buy</i></h4>
                                 <p className=' m-lg-4'>{show.shop_name}</p>
@@ -79,7 +78,7 @@ export default function AccessoryDetails() {
             )
         }
        
-  
+
     </div>
 
     

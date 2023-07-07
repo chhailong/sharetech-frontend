@@ -1,7 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function () {
+
+export default function Navbar () {
+    const userLogin  = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null ;
+    const [userInfo , setUserInfo] = React.useState(userLogin) ;
+    console.log(userInfo);
+
+    function logout() {
+        // Remove the user information from local storage.
+        localStorage.removeItem("user");
+      
+        // Redirect the user to the login page.
+        window.location.href = "/login";
+      }
+
   return (
     <>
    
@@ -13,11 +26,11 @@ export default function () {
             </div>
             
             <div className="collapse navbar-collapse flex-row justify-content-end" id="nav">
-                <form className="d-flex  w-50" role="search">
+                {/* <form className="d-flex  w-50" role="search">
             
                 <input   class="form-control me-2 rounded-pill " type="search"  placeholder=" Search" aria-label="Search" />
          
-                </form>
+                </form> */}
 
                 <ui className=" navbar-nav">
                     <li className='nav-item'>
@@ -30,16 +43,35 @@ export default function () {
                         <Link to ={`/recommand`} className='nav-link '>Recommand</Link>
                     </li>
 
+                    {
+                        userInfo ? (
+                            <li className='nav-item'>
+                           <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#"  data-bs-toggle="dropdown" aria-expanded="false">
+                             {userInfo.name}
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <Link to ={`/dashboard`} className="nav-link  text-black" >Dashboard</Link>
+                                <li><a class="dropdown-item" href="#"onClick={logout} >Logout</a></li>
+                              
+                            </ul>
+                            </div>
+                                
+                            </li>
+                        ) : (   <li className='nav-item'>
+                            <Link to ={`/login`} className='nav-link '>Login</Link>
+                        </li>)
+                    }
+
+          
+
+             
                     {/* <li className='nav-item'>
-                        <Link to ={`/details`} className='nav-link'>Details</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to ={`/accessories`} className='nav-link'>Accessory</Link>
-                    </li> */}
-                    <li className='nav-item'>
-                        {/* <Link to ={`/details`} className='nav-link'><button className="btn btn-danger rounded-pill " >Login</button></Link> */}
+                       
                         <Link to ={`/login`} className='nav-link'>Login</Link>
-                    </li>
+                    </li> */}
 
                 </ui>
                 
