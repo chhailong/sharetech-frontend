@@ -3,12 +3,10 @@ import Card from './Card';
 import { Link , useLocation  , useNavigate ,useParams} from 'react-router-dom';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
-
 export default function Review() { 
 
   const navigate = useNavigate();
-  // const id = useParams() ; 
-
+ 
   const [electronic, setElectronic] = React.useState([]);
 
   const getData = async () => {
@@ -17,13 +15,14 @@ export default function Review() {
       const result = await response.json();
       console.log(result.data);
 
-    
+  
       setElectronic(result.data);
   
     }catch(error){  
       console.log(error);
     }
   }
+
 
   useEffect(() =>{
     getData(); 
@@ -41,7 +40,7 @@ export default function Review() {
             electronic.map((item) => {
               return (
                 <div className=" col-md-4">
-                    <Link to ={"/electronic/" + item.id} key={item.id}>
+                    <Link className='nav-link' to ={"/electronic/" + item.id} key={item.id}>
                       <Card className = ""  key={item.id} image1 = {item.image1}   name= {item.name} price= {item.price} ></Card>
                     </Link> 
 

@@ -29,7 +29,7 @@ export default function Related () {
             related.map((item) => {
               return (
                 <div className=" col-md-4">
-                    <Link to ={"/electronic/" + item.id} key={item.id}>
+                    <Link className='nav-link' to ={"/electronic/" + item.id} key={item.id}>
                       <Card className = ""  key={item.id} image1 = {item.image1}   name= {item.name} price= {item.price} ></Card>
                     </Link> 
                     </div>

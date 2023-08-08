@@ -13,14 +13,12 @@ export default function Recommend() {
 	const [major , setMajor] = React.useState('') ;
 	const [price , setPrice] = React.useState('') ;
 
-
+ 
    console.log(name , major , price)
 
 	const Filter = async () => {
 		const data = {name , major , price} ;
 		const response = await fetch(`http://localhost:8000/api/electronic/filtering?name=${name}&major=${major}&price=${price}`);
-
-		// ?name=${name}&major=${major}&price=${price}
 
 		const result = await response.json();
 		setElectronic(result);
@@ -30,6 +28,7 @@ export default function Recommend() {
 		if(!result){
 			return <h1>Not Found</h1>
 		}
+		
 	}
 
 	useEffect(()=>{
@@ -122,19 +121,17 @@ export default function Recommend() {
 			<label class="form-check-label" for="flexCheckDefault">
 				Content Creator
 			</label>
-			</div>
-
-				
+			</div>			
 	    </div>
 		</div>
-		<button class="btn btn-outline-dark btn-lg px-5 mt-4"onClick={Filter} >Apply</button>
+		{/* <button class="btn btn-outline-dark btn-lg px-5 mt-4"onClick={Filter} >Apply</button> */}
 	</article>
 
 
 	
 </div> 
 
-	</aside>
+</aside>
 <main class="col-md-9">
 
 <div class="row">
@@ -148,7 +145,7 @@ export default function Recommend() {
 	electronic.map((item) => {
 	  return (
 		<div className=" col-md-4">
-			<Link to ={"/electronic/" + item.id} key={item.id}>
+			<Link className='nav-link' to ={"/electronic/" + item.id} key={item.id}>
 			  <Card className = ""  key={item.id} image1 = {item.image1}   name= {item.name} price= {item.price} ></Card>
 			</Link> 
 			</div>

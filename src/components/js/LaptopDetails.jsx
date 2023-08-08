@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState , useEffect } from 'react';
+import "../css/home.css" ; 
 
 import '../css/details.css';
 import { Link  } from 'react-router-dom';
@@ -25,103 +26,92 @@ const getLaptop = async () => {
     <>
 
     <div className="container">
-        {/* {
-            laptop.map((show) => 
-            (
-                    <div className="row d-sm-flex py-5 ">
-                    <div className="col-md">
-                    <img className='img-fluid' src={show.image1} alt="" height={`400px`}  width={`500px`}/>
-                
-                    </div>
-                    <div className="col-md">
-                        <h2 className="text-upercase text-black-50 py-3">
-                            {show.name}
-                        </h2>
-                        <table class="table table-borderless">
-
-                            <tbody>
-                                <tr>
-                                <td className=' fw-bold'>Brand</td>
-                                <td>{show.laptops.brand}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>OS</td>
-                                <td>{show.laptops.os}</td>
-                                </tr>
-                                
-                                <tr>
-                                <td className=' fw-bold'>RAM</td>
-                                <td>{show.laptops.ram}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>CPU</td>
-                                <td>{show.laptops.cpu}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>GPU</td>
-                                <td>{show.laptops.gpu}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>Storage</td>
-                                <td>{show.laptops.storage}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>Display Size</td>
-                                <td>{show.laptops.screen_size}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>Refresh Rate</td>
-                                <td>{show.laptops.refresh_rate}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>Battery</td>
-                                <td>{show.laptops.battery}</td>
-                                </tr>
-                                <tr>
-                                <td className=' fw-bold'>Price</td>
-                                <td>{show.price}<i class="bi bi-currency-dollar"></i></td>
-                                </tr>
-          
-                            </tbody>
-                            </table>
-
-                            <div className="fw-bold">
-                                <h4>Description</h4>
-                            </div>
-                            <div className=" m-lg-4">
-                                <p>{show.description}</p>
-                            </div>
-                            <div className="fw-bold">
-                                <h4><i class="bi bi-people text-info">Recommand For Major</i></h4>
-                                <p className=' m-lg-4'>{show.major}</p>
-                            </div>
-                            <div className="fw-bold">
-                                <h4><i className="bi bi-shield-check text-primary">Advantage</i></h4>
-                                <p className=' m-lg-4'>{show.laptops.pro}</p>
-                            </div>
-                            <div className="fw-bold">
-                                <h4><i className="bi bi-shield-exclamation text-primary">Disadvantage</i></h4>
-                                <p className=' m-lg-4'>{show.laptops.con}</p>
-                            </div>
-
-                            <div className="fw-bold py-3">
-                                <h4><i className="bi bi-bag text-primary">Where You Can Buy</i></h4>
-                                <p className=' m-lg-4'>{show.shop_name}</p>
-                            </div>
-
-                    </div>
-                </div>
-                )
-            )
-        } */}
 
      {details && (
 
-                    <div className="row d-sm-flex py-5 ">
-                    <div className="col-md">
-                    <img className='img-fluid' src={details.image1} alt="" height={`400px`}  width={`500px`}/>
+        <div className="row d-sm-flex py-5 ">
+            <div className="col-md">
+                  
+            <div
+                id="carouselExampleIndicators"
+                    className="carousel slide"
+                    data-bs-ride="true"
+                  >
+                    <div className="carousel-indicators">
+                      <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="0"
+                        className="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                      ></button>
+                      <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                      ></button>
+                      <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                      ></button>
+                    </div>
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img
+                          src={details.image1}
+                          className="d-block w-100"
+                          alt="picture"
+                        />
+                      </div>
+                      <div className="carousel-item ">
+                        <img
+                          src={details.image2}
+                          className="d-block w-100"
+                          alt="picture"
+                        />
+                      </div>
+                      <div className="carousel-item ">
+                        <img
+                          src={details.image3}
+                          className="d-block w-100"
+                          alt="picture"
+                        />
+                      </div>
+                    </div>
+                    <button
+                      className="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      className="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                    {/* <img className='img-fluid' src={details.image1} alt="" height={`400px`}  width={`500px`}/> */}
                 
                     </div>
+
                     <div className="col-md">
                         <h2 className="text-upercase text-black-50 py-3">
                             {details.name}
@@ -177,26 +167,30 @@ const getLaptop = async () => {
                             <div className="fw-bold">
                                 <h4>Description</h4>
                             </div>
-                            <div className=" m-lg-4">
+                            <div className="text-description m-lg-4 text-black-50">
                                 <p>{details.description}</p>
                             </div>
                             <div className="fw-bold">
                                 <h4><i class="bi bi-people text-info">Recommand For Major</i></h4>
-                                <p className=' m-lg-4'>{details.major}</p>
+                               
                             </div>
+                            <p className='text-major m-lg-4 text-xl'>{details.major}</p>
                             <div className="fw-bold">
                                 <h4><i className="bi bi-shield-check text-primary">Advantage</i></h4>
-                                <p className=' m-lg-4'>{details.getLaptop.pro}</p>
+                        
                             </div>
+                            <p className='text-pro m-lg-4'>{details.getLaptop.pro}</p>
                             <div className="fw-bold">
                                 <h4><i className="bi bi-shield-exclamation text-primary">Disadvantage</i></h4>
-                                <p className=' m-lg-4'>{details.getLaptop.con}</p>
                             </div>
+                            <p className='text-con m-lg-4'>{details.getLaptop.con}</p>
 
                             <div className="fw-bold py-3">
                                 <h4><i className="bi bi-bag text-primary">Where You Can Buy</i></h4>
-                                <p className=' m-lg-4'>{details.shop_name}</p>
+                               
                             </div>
+                            <p className='text-shop m-lg-4'>{details.shop_name}</p>
+                        
 
                     </div>
                 </div>
@@ -205,7 +199,7 @@ const getLaptop = async () => {
         </div>
 
         <div className="container">
-            <h3>Related Electronics</h3>
+            <h3 className='text-uppercase'>Related Electronics</h3>
 
             <Related/>
 

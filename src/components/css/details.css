@@ -2,3 +2,11 @@
     width: 400px; 
     height: 500px;
 }
+
+.text-description ,.text-major ,.text-pro , .text-con , .text-shop{
+    font-size: 20px;
+}
+tbody{
+    font-size: 20px;
+}
+

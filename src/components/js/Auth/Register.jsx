@@ -9,8 +9,6 @@ export default function Register() {
   const [c_password , setC_Password] = useState("");
   const navigate = useNavigate();
 
-
-
   async function SignUp(){
     let item = { name , email, password , c_password}; 
     console.warn(item);

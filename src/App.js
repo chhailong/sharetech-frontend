@@ -39,7 +39,7 @@ function App() {
 
           {/* <Route  path={"/products/laptops/detail/:id"} element ={ <LaptopDetails/>}></Route> */}
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
         </div>
       </Router>
     </>
