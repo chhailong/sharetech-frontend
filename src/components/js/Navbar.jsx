@@ -34,11 +34,11 @@ export default function Navbar () {
             </div>
             
             <div className="collapse navbar-collapse flex-row justify-content-end" id="nav">
-                <form className="d-flex  w-50" role="search">
+                {/* <form className="d-flex  w-50" role="search">
             
                 <input   class="form-control me-2 rounded-pill " type="search"  placeholder=" Search" aria-label="Search" />
          
-                </form>
+                </form> */}
                 <ui className=" navbar-nav ">
                     <li className='nav-item'>
                         <Link to ={`/`} className='nav-link fw-bold text-lg text-light '>Home</Link>
@@ -60,7 +60,7 @@ export default function Navbar () {
                              <img src={profile} alt="" className=" rounded-circle" style={{width:"40px" , height:"50px" }} />
 
                             </a>
-
+                            
                             <ul class="dropdown-menu">
                                 <h5 className="m-2">{userInfo.name}</h5>
                                 <Link to ={`/dashboard`} className="nav-link  text-black" >Dashboard</Link>
@@ -71,9 +71,18 @@ export default function Navbar () {
                                 
                             </li>
                         ) : (   <li className='nav-item'>
-                            <Link to ={`/login`} className='nav-link '>Login</Link>
+                            <Link to ={`/login`} className='nav-link '> <button className="btn btn-outline-info  ">Login</button></Link>
                         </li>)
                     }
+
+
+                    
+
+                    <li className='nav-item'>
+                        <Link to ={`/save`} className='nav-link fw-bold text-lg text-light'>
+                        <i class="bi bi-save-fill"></i>
+                        </Link>
+                    </li>
 
           
 

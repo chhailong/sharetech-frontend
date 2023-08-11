@@ -86,8 +86,8 @@ export default function PostElectronic() {
                                 <label for="price">Price</label>
                             </div>
 
-                            <div class="select mb-2">
-                                <select class="form-select"  onChange={(e) =>setElectronic_type_id(e.target.value)} name ="electronic_type_id" aria-label=" select ">
+                            <div class="select mb-2 mx-lg ">
+                                <select class="form-select "  onChange={(e) =>setElectronic_type_id(e.target.value)} name ="electronic_type_id" aria-label=" select ">
                            
                                     <option value="1">Laptop</option>
                                     <option value="2">Accessories</option>

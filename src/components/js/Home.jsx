@@ -140,16 +140,14 @@ export default function Home() {
 
         <div className="container">
           <div className="text-center">
-            {/* <h2>Trending Electronic</h2> */}
+            <h2>Trending Electronic</h2>
           </div>
 
-          <div>
-
-            <Review />
-
-
+          <div >
+              <Card />
           </div>
-          <h2></h2>
+            
+      
         </div>
       </section>
 

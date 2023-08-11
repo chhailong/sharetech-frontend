@@ -4,6 +4,7 @@ import Navbar from './components/js/Navbar';
 import Home from './components/js/Home';
 import Review from './components/js/Review';
 import LaptopDetails from './components/js/LaptopDetails';
+import Favorite from './components/js/Favorite';
 // import AccessoryDetails from './components/js/AccessoryDetails';
 
 import Login from './components/js/Auth/Login';
@@ -36,10 +37,11 @@ function App() {
           <Route  path="/dashboard" element={<Dashboard/>}></Route>
           <Route  path="/dashboard/post_electronic" element={<PostElectronic/>}></Route>
           <Route  path="/recommand" element={<Recommend/>}></Route>
+          <Route  path="/save" element={<Favorite/>}></Route>
 
           {/* <Route  path={"/products/laptops/detail/:id"} element ={ <LaptopDetails/>}></Route> */}
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
       </Router>
     </>

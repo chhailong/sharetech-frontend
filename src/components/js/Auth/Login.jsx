@@ -32,7 +32,7 @@ export default function Login() {
 
       else if ( result.data.role === 'user') {
        navigate('/');
-       alert("You are user ,Can not access to admin page");
+      //  alert("You are user ,Can not access to admin page");
 
       }
     }).catch((err)=>{
@@ -49,7 +49,7 @@ export default function Login() {
           <div class="container py-2 h-75">
             <div class="row d-flex justify-content-center align-items-center h-75">
               <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card bg-dark text-white border" >
+                <div class="card bg-dark text-white border " style={{width:"400px"}} >
                   <div class="card-body p-5 text-center">
 
                     <div class="mb-md-5 mt-md-4 pb-5">

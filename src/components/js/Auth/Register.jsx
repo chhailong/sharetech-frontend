@@ -38,7 +38,7 @@ export default function Register() {
           <div className="container py-2 h-75">
             <div className="row d-flex justify-content-center align-items-center h-75">
               <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div className="card bg-dark text-white border" >
+                <div className="card bg-dark text-white border" style={{width:"400px"}} >
                   <div className="card-body p-5 text-center">
 
                     <div className="mb-md-5 mt-md-4 pb-5">

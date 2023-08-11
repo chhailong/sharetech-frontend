@@ -21,7 +21,7 @@ export default function Related () {
           }, [id] )
   return (
     <>
-    <div className="container">
+    {/* <div className="container">
 
 
         <div className="row d-flex flex-md-wrap  g-3">
@@ -38,7 +38,7 @@ export default function Related () {
             })
           }
           </div>
-    </div>
+    </div> */}
 
 
 

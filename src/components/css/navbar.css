@@ -1,3 +1,15 @@
+
 .navbar-brand{
-    font-size: 30px;
-}
+    text-shadow: #04AA6D;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+  li{
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+  }
+  li:hover{
+    color: blue;
+  }
