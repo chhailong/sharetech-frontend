@@ -18,29 +18,40 @@ export default function PostElectronic() {
     const [price , setPrice] = useState('');
     const [shop_name , setShop_name] = useState('');
 
-    async function PostEle(){
-        console.log("name" , name);
-        let item = {name , image1 , image2 , image3 , description , electronic_type_id , major , price , shop_name}; 
-        console.warn(item);
-        let result =  await fetch("http://localhost:8000/api/admin/electronics", {
-          method: 'POST' , 
-          body: JSON.stringify(item), 
+    const token = localStorage.getItem("access_token") ? JSON.parse(localStorage.getItem('access_token')) : null ; 
+
+
+    const PostEle = async () => {
+      
+        const response = await fetch("http://localhost:8000/api/admin/electronics", {
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
-          }
-        }) ; 
-       
-        if(result.error){
-          alert(result.error);
-        }else{
-          result =  await result.json(); 
-          console.warn("result", result);
-          localStorage.setItem("user-info" , JSON.stringify(result));
-          navigate('/dashboard');
+            "Accept": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            name,
+            image1,
+            image2,
+            image3,
+            description,
+            electronic_type_id ,
+            major ,
+            price ,
+            shop_name
+        
+          }),
+        });
+        if(response.status === 201){
+            const data = await response.json();
+            console.log(data);
+            navigate('/dashboard') ;
         }
-       
-      }
+        else{
+            alert("Something went wrong") ;
+        }
+    }
 
   return (
     <>
@@ -73,7 +84,7 @@ export default function PostElectronic() {
                                 <input class="form-control" value={image3} onChange={(e) =>setImage3(e.target.value)} name="image3" type="text" placeholder=" " required/>
                                
                                 <label for="image3">Image 3</label>
-                            </div>
+                            </div> 
 
                             <div class="form-floating mb-2">
                                 <input class="form-control" value={major} onChange={(e) =>setMajor(e.target.value)} name="major" type="text" placeholder=" " required/>
@@ -90,7 +101,7 @@ export default function PostElectronic() {
                                 <select class="form-select "  onChange={(e) =>setElectronic_type_id(e.target.value)} name ="electronic_type_id" aria-label=" select ">
                            
                                     <option value="1">Laptop</option>
-                                    <option value="2">Accessories</option>
+                                    <option value="2">Accessory</option>
                              
                                 </select>
     
@@ -102,13 +113,13 @@ export default function PostElectronic() {
                             
                             </div>
                             <div class="form-floating mb-2">
-                            <textarea class="form-control" value={description} onChange={(e) =>setDescription(e.target.value)} placeholder="Leave a comment here" id="floatingTextarea2" ></textarea>
+                            <textarea class="form-control" value={description} onChange={(e) =>setDescription(e.target.value)} placeholder="Leave a comment here" id="floatingTextarea2" style={{height:"200px"}} ></textarea>
                             <label for="floatingTextarea2">Description</label>
                             </div>
                           
                             <br />
 
-                            <button class="btn btn-primary text-uppercase"  value="Save" onClick={PostEle} type="submit">Post</button>
+                            <button class="btn btn-outline-success btn-lg px-5 m-1 text-uppercase"  value="Save" onClick={PostEle} type="button">Post</button>
                         </form>
                     </div>
                     </div>

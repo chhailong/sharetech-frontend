@@ -15,6 +15,7 @@ import Recommend from './components/js/Recommend';
 
 // import AccessoryDetails from './components/js/AccessoryDetails';
 import PostElectronic from './components/js/Admin/PostElectronic';
+import PostLaptop from './components/js/Admin/PostLaptop';
 import Footer from './components/js/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -36,9 +37,10 @@ function App() {
           {/* <Route  path={"/electronic/accessories/:id"} element={<AccessoryDetails/>  }></Route> */}
           <Route  path="/dashboard" element={<Dashboard/>}></Route>
           <Route  path="/dashboard/post_electronic" element={<PostElectronic/>}></Route>
+          <Route  path="/dashboard/post_laptop" element={<PostLaptop/>}></Route>
           <Route  path="/recommand" element={<Recommend/>}></Route>
           <Route  path="/save" element={<Favorite/>}></Route>
-
+    
           {/* <Route  path={"/products/laptops/detail/:id"} element ={ <LaptopDetails/>}></Route> */}
         </Routes>
         {/* <Footer/> */}

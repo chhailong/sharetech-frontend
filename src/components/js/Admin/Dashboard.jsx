@@ -27,22 +27,20 @@ export default function Dashboard() {
 
   return (
     <>
-    <div className="dashboard rounded-2 py-5">
-        <article className=' float-sm-start w-25 vh-100 border-3'>
+    <div className="dashboard rounded-2 py-5 d-flex flex-wrap">
+        <article className=' float-sm-start  h-100 border-3 '>
             <h1 className='text-center py-3'>
                 <i class="bi bi-house-gear-fill">Admin</i>
             </h1>
             <ul className='list-group list-group-flush border-2 '>
                 <Link to ="/dashboard/post_electronic" className='list-group-item '><button className="btn btn-outline-info ">Electronic Post</button></Link>
-                <Link to ="#" className='list-group-item '><button className="btn btn-outline-info  ">Laptop Post</button></Link>
+                <Link to ="/dashboard/post_laptop" className='list-group-item '><button className="btn btn-outline-info  ">Laptop Post</button></Link>
             </ul> 
         </article>
 
         <aside className='float-sm-start  w-75 vh-100'>
              <div className="container overflow-auto">
 
-    
-               
                         <table class="table table-bordered ">
                         <thead>
                             <tr>
@@ -74,6 +72,14 @@ export default function Dashboard() {
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.major}</td>
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.price}</td>
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.shop_name}</td>
+                            <td >
+                            <Link to ={`/dashboard/edit-place/${item.id}`} className="btn btn-outline-info btn-sm m-1">Edit</Link>
+                            {/* <Link to ="#" className="btn btn-outline-danger btn-sm m-1 " 
+                            {...item.id}  onClick={()=>DeletePlace(item.id)}
+                            >Delete</Link> */}
+
+                            <Link to={"/dashboard/view-place/" +item.id} key={item.id} className="btn btn-outline-success btn-sm m-1">View</Link>
+                            </td>
 
                             </tr>
                         </tbody>
