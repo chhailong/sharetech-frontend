@@ -43,29 +43,7 @@ const token = localStorage.getItem("access_token") ? JSON.parse(localStorage.get
     else{
         alert("Something went wrong") ;
     }
-    // const datas = {id} ;
 
-
-
-    // console.log(id);
-
-    //   const response = await fetch("http://localhost:8000/api/user/favorites/" + id, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       "Accept": "application/json",
-    //       Authorization: `Bearer ${token}`,
-    //     },
- 
-    //   });
-    //   if(response.status === 200){
-    //       const data = await response.json();
-    //       console.log(data);
-    //       navigate('/save');
-    //   }
-    //   else{
-    //       alert("Something went wrong") ;
-    //   }
   }
 
   useEffect(() =>{
@@ -85,8 +63,7 @@ const token = localStorage.getItem("access_token") ? JSON.parse(localStorage.get
       electronic.map((item) => {
         return(
           <div className="col ">
-   
-          
+  
               <div className="card card-size text-light bg-dark"  >
               <img src={item.image1} class="card-img-top " alt="image" width={`300px`} height={`400px`}/> 
               <div className="card-body ">
@@ -98,7 +75,6 @@ const token = localStorage.getItem("access_token") ? JSON.parse(localStorage.get
                   </div>
                 
                     <button className="btn btn-outline-secondary btn-md text-light"><Link class ="nav-link"  to ={"/electronic/" + item.id} key={item.id}>See more</Link></button>
-
                     <button className="btn btn-danger btn-md text-light mx-2"><i class="bi bi-heart"   onClick={SaveItem } ></i></button>
                 
               </div>

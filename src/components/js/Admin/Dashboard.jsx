@@ -27,14 +27,14 @@ export default function Dashboard() {
 
   return (
     <>
-    <div className="dashboard rounded-2">
+    <div className="dashboard rounded-2 py-5">
         <article className=' float-sm-start w-25 vh-100 border-3'>
             <h1 className='text-center py-3'>
                 <i class="bi bi-house-gear-fill">Admin</i>
             </h1>
             <ul className='list-group list-group-flush border-2 '>
-                <Link to ="/dashboard/post_electronic" className='list-group-item '><button className="btn btn-outline-info btn-md px-5 mb-2 w-75 mx-auto ">Electronic Post</button></Link>
-                <Link to ="#" className='list-group-item '><button className="btn btn-outline-info btn-md px-5 mb-2 w-75 mx-auto ">Laptop Post</button></Link>
+                <Link to ="/dashboard/post_electronic" className='list-group-item '><button className="btn btn-outline-info ">Electronic Post</button></Link>
+                <Link to ="#" className='list-group-item '><button className="btn btn-outline-info  ">Laptop Post</button></Link>
             </ul> 
         </article>
 
@@ -66,9 +66,9 @@ export default function Dashboard() {
                             <tr className='vh-25'>
                             <td className='text-truncate' style={{maxWidth:"100px"}} >{item.id}</td>
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.name}</td>
-                            <td className='text-truncate' style={{maxWidth:"100px"}}>{item.image1}</td>
-                            <td className='text-truncate' style={{maxWidth:"100px"}}>{item.image2}</td>
-                            <td className='text-truncate' style={{maxWidth:"100px"}}>{item.image3}</td>
+                            <td className='text-truncate' ><img src={item.image1} alt='image1'  style={{width:"120px" ,height:"90px"}} /></td>
+                            <td className='text-truncate' ><img src={item.image2} alt='image2'  style={{width:"120px" ,height:"90px"}} /></td>
+                            <td className='text-truncate' ><img src={item.image3} alt='image3'  style={{width:"120px" ,height:"90px"}} /></td>
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.description}</td>
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.electronic_type_id}</td>
                             <td className='text-truncate' style={{maxWidth:"100px"}}>{item.major}</td>
