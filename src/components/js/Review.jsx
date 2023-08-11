@@ -34,16 +34,15 @@ export default function Review() {
   return (
     <>
 
-    <div className="container">
+    <div className="container py-5">
       <div className=" text-uppercase">
-        <h1 className="text-center text-info">Review Electronics</h1>
+        <h1 className="text-center text-info ">Review Electronics</h1>
+      </div>
+      <div>
+        <Card/>
       </div>
         <div className="row d-flex flex-wrap  g-3">
-          <div className=" col-md-4">
-      
-           {/* <Card/> */}
-
-           </div>
+     
 
          
           {/* {
