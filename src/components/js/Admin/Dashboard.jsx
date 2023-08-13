@@ -5,22 +5,29 @@ import {useState , useEffect} from 'react' ;
 
 export default function Dashboard() {
     const [electronic , setElectronic] = useState([]);
-    const getData = async () => {
+    const token = localStorage.getItem("access_token") ? JSON.parse(localStorage.getItem('access_token')) : null ; 
+
+      const GetElectronic = async () =>{
+         
         try{
-          const response = await fetch("http://localhost:8000/api/electronics");
-          const result = await response.json();
-          console.log(result.data);
+          const response = await fetch("http://localhost:8000/api/admin/electronics", {
+            headers:{
+              Authorization: `Bearer ${token}`,
+           
+            }
+          }); 
+          const result = await  response.json() ;  
+          setElectronic(result.data) ; 
+          console.log(result.data); 
     
-        
-          setElectronic(result.data);
-      
-        }catch(error){  
-          console.log(error);
+        }catch(err){
+          console.log(err) ; 
         }
+    
       }
     
       useEffect(() =>{
-        getData(); 
+        GetElectronic() ;
     
       } , [])
 

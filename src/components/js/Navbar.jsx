@@ -14,6 +14,7 @@ export default function Navbar () {
     function logout() {
         // Remove the user information from local storage.
         localStorage.removeItem("user");
+        localStorage.removeItem("access_token");
       
         // Redirect the user to the login page.
         window.location.href = "/login";
@@ -33,7 +34,7 @@ export default function Navbar () {
             <span className=""><i class="bi bi-list"></i></span>
             </div>
             
-            <div className="collapse navbar-collapse flex-row justify-content-end" id="nav">
+            <div className="collapse navbar-collapse flex-row justify-content-end me-4 " id="nav">
                 {/* <form className="d-flex  w-50" role="search">
             
                 <input   class="form-control me-2 rounded-pill " type="search"  placeholder=" Search" aria-label="Search" />
@@ -49,6 +50,11 @@ export default function Navbar () {
                     <li className='nav-item'>
                         <Link to ={`/recommand`} className='nav-link fw-bold text-lg text-light'>Recommand</Link>
                     </li>
+                    <li className='nav-item'>
+                        <Link to ={`/save`} className='nav-link fw-bold text-lg text-light'>
+                        <i class="bi bi-cart-fill"></i>
+                        </Link>
+                    </li>
 
 
                     {
@@ -62,9 +68,9 @@ export default function Navbar () {
                             </a>
                             
                             <ul class="dropdown-menu">
-                                <h5 className="m-2">{userInfo.name}</h5>
-                                <Link to ={`/dashboard`} className="nav-link  text-black" >Dashboard</Link>
-                                <li><a class="dropdown-item" href="#"onClick={logout} >Logout</a></li>
+                                <h5 className="m-2 text-primary">{userInfo.name}</h5>
+                                <Link to ={`/dashboard`} className="nav-link  text-black" ><i class="bi bi-house"></i>Dashboard</Link>
+                                <Link class=" nav-link text-danger" to="#" onClick={logout} ><i class="bi bi-box-arrow-right"></i>Logout</Link>
                               
                             </ul>
                             </div>
@@ -78,11 +84,7 @@ export default function Navbar () {
 
                     
 
-                    <li className='nav-item'>
-                        <Link to ={`/save`} className='nav-link fw-bold text-lg text-light'>
-                        <i class="bi bi-save-fill"></i>
-                        </Link>
-                    </li>
+
 
           
 

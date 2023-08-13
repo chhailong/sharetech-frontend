@@ -41,7 +41,7 @@ export default function Recommend() {
 <div class="row">
 	<aside class="col-md-3 p-4">
 		
-	<div class="card h-100">
+	<div class="card " style={{height:"auto"}}>
 			<article class="filter-group">
 				<header class="card-header">
 					<h6 className=' text-uppercase'>Electronic Name</h6>
